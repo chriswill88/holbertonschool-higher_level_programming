@@ -4,7 +4,7 @@
 def uppercase(str):
     i = 0
     while i < len(str):
-        if ord(str[i]) in range(97, 122):
+        if ord(str[i]) in range(97, 123):
             a = chr((ord(str[i]) - ord('a')) + ord('A'))
         else:
             a = str[i]
