@@ -11,18 +11,17 @@ if __name__ == "__main__":  # no run from import
     a = int(argv[1])  # first number
     b = int(argv[3])  # second number
 
-
     """ this part is for finding the operatior and getting the results """
     if argv[2] == '+':
-        results = add(a, b)
+        res = add(a, b)
     elif argv[2] == '-':
-        results = sub(a, b)
+        res = sub(a, b)
     elif argv[2] == '*':
-        results = mul(a, b)
-    elif argv[2] == '/': 
-        results = div(a, b)
+        res = mul(a, b)
+    elif argv[2] == '/':
+        res = div(a, b)
 
     else:  # fail case unknow operator
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    print("{} {} {} = {}".format(argv[1], argv[2], argv[3], results))  # prints out the results
+    print("{} {} {} = {}".format(argv[1], argv[2], argv[3], res))  # prints out
