@@ -1,19 +1,5 @@
 #!/usr/bin/python3
-x = 0
-it = 0
-asci = 97
-char = 0
+
 for i in range(0, 99):
-    print("{} = {}x{}{}".format(i, 0, it, char))
-    if x == 15:
-        asci = 97
-        x = 0
-        it = it + 1
-    else:
-        x = x + 1
-    if x > 9:
-        char = chr(asci)
-        asci = asci + 1
-    else:
-        char = x
+    print("{} = {}".format(i, hex(i)))
     i = i + 1
