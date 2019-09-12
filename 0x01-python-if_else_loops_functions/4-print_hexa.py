@@ -2,8 +2,9 @@
 x = 0
 it = 0
 asci = 97
-for i in range(0, 98):
-
+char = 0
+for i in range(0, 99):
+    print("{} = {}x{}{}".format(i, 0, it, char))
     if x == 15:
         asci = 97
         x = 0
@@ -15,6 +16,4 @@ for i in range(0, 98):
         asci = asci + 1
     else:
         char = x
-        i = i + 1
-
-    print("{} = {}x{}{}".format(i, 0, it, char))
+    i = i + 1
