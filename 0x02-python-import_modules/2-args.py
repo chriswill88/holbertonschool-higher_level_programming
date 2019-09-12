@@ -14,5 +14,5 @@ print("{} {}{}".format(argc, plural, dot))
 
 if argc > 0:
     for i in range(1, argc + 1):
-        print("{}: {}".format(len(argv[i]), argv[i]))
+        print("{}: {}".format(i, argv[i]))
         i += 1
