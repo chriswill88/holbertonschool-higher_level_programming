@@ -4,6 +4,6 @@
 def multiple_returns(sentence):
     if sentence is None:
         return (0, None)
-    elif sentence is "":
-        return (0, "")
+    elif len(sentence) == 0:
+        return (0, None)
     return (len(sentence), sentence[0])
