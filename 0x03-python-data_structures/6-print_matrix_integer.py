@@ -7,7 +7,7 @@ def print_matrix_integer(matrix=[[]]):
     x = 0
     while i in range(len(matrix)):  # looping through columns
         while x in range(0, len(matrix[i])):  # looping through rows
-            str = "{}"
+            str = "{:d}"
             print(str.format(matrix[i][x]), end="")
             if x < len(matrix[i]) - 1:  # printing spaces
                 print(" ", end="")
