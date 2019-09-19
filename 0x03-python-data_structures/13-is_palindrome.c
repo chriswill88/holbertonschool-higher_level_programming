@@ -17,7 +17,6 @@ int is_palindrome(listint_t **head)
 		b = b->next;
 		end++;
 	}
-	printf("the num of nodes is %d\n", end);
 	b = *head;
 	while (beg < end)
 	{
@@ -31,11 +30,7 @@ int is_palindrome(listint_t **head)
 		}
 
 		if (e->n != b->n)
-		{
-			printf("%d != %d\n", b->n, e->n);
 			return (0);
-		}
-		printf("working beg %d = %d end\n", b->n, e->n);
 		beg++;
 		end--;
 		b = b->next;
