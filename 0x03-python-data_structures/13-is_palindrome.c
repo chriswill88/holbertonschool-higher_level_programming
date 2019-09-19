@@ -6,33 +6,26 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *b = *head, *e = b;
-	int end = 0, beg = 0, i;
+	listint_t *b = *head, *e = b, *mid;
 
 	if (b == NULL || b->next == NULL)
 		return (1);
 
-	while (b->next)
-	{
-		b = b->next;
-		end++;
-	}
-	b = *head;
-	while (beg < end)
-	{
-		e = b;
-		i = beg;
+	while (e->next)
+		e = e->next;
 
-		while (i < end)
-		{
-			e = e->next;
-			i++;
-		}
+	while (b != e)
+	{
+		mid = b;
 
-		if (e->n != b->n)
+		while (mid->next != e)
+			mid = mid->next;
+
+		if (b->n != e->n)
 			return (0);
-		beg++;
-		end--;
+		if (b == mid)
+			break;
+		e = mid;
 		b = b->next;
 	}
 	return (1);
