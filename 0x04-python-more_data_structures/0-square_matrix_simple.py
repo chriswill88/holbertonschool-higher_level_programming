@@ -2,5 +2,6 @@
 
 
 def square_matrix_simple(matrix=[]):
-    lis = [[matrix[x][y] ** 2 for y in range(len(matrix[x]))] for x in range(len(matrix))]
+    m = matrix
+    lis = [[m[x][y] ** 2 for y in range(len(m[x]))] for x in range(len(m))]
     return lis
