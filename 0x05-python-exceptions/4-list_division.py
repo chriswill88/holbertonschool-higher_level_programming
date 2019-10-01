@@ -12,14 +12,12 @@ def list_division(my_list_1, my_list_2, list_length):
             x = my_list_1[i]
             y = my_list_2[i]
             div = x / y
-        except:
-            if y == 0:
-                print("division by zero")
-            if i >= len(my_list_1) or i >= len(my_list_2):
-                print("out of range")
-            elif isinstance(y, (int, float) or isinstance(x, (int, float))):
-                print("wrong type")
-            div = 0
+        except ZeroDivisionError:
+            print("division by zero")
+        except IndexError:
+            print("out of range")
+        except TypeError:
+            print("wrong type")
         finally:
             lis.append(div)
     return lis
