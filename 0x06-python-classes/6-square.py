@@ -8,8 +8,8 @@ class Square:
         Private Instance Variable: __size
     """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -29,10 +29,15 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if len(self.__position) != 2:
+        if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        if self.__position[0] < 0 or self.__position[1] < 0:
+        if len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value[0], int) or not isinstance(value[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     """
         Public instance method: area
