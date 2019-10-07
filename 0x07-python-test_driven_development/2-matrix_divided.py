@@ -1,7 +1,20 @@
 #!/usr/bin/python3
+""" Doc this modual is for defining a
+function that divides a matrix by a number
+returning a new matrix with solutions
+"""
 
 
 def matrix_divided(matrix, div):
+    """
+    matrix_divided - divides a matrix by a number
+
+    list1 - the returned list
+    number - makes sure we have the first index of a inside list
+    index1 - gives use the index of an embeded list
+
+    Return: list1 - matrix of divided solutions
+    """
     list1 = []
     number = 0
     index1 = 0
