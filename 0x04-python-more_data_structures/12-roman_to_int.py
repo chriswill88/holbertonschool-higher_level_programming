@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
     for x in range(len(rs)):
         for key, val in romnum.items():
             if rs[x] is key:
-                if x == 0 and key is 'I' and len(rs) > x:
+                if key is 'I' and x + 1 < len(rs) and rs[x + 1] is not 'I':
                     num -= val
                 else:
                     num += val
