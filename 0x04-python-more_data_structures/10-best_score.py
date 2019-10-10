@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
     i = 0
+    hold = None
     try:
         for x, y in a_dictionary.items():
             if y >= i:
