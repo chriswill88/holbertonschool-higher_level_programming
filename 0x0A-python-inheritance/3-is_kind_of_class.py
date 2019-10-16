@@ -6,7 +6,8 @@ This modual contains the program is_kind_of_class
 
 def is_kind_of_class(obj, a_class):
     """
-    is_kind_of_class - checks if obj is of a_class or if obj inherits from this a_class
+    is_kind_of_class -
+    checks if obj is of a_class or if obj inherits from a_class
 
     Parameters:
         obj - the object
