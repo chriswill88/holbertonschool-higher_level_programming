@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This program returns a list of all available attrributes and methods of an object
+This program returns a list of all available attrributes and methods
 """
 
 
