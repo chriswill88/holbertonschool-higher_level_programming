@@ -1,9 +1,14 @@
-#!/usr/bin/python3
 import unittest
 from models.base import Base
+"""
+This modual contains class TestBase:
+"""
 
 
 class TestBase(unittest.TestCase):
+    """
+    Class TestBase : testing class for base modual
+    """
     def test_base(self):
         b = Base()
         self.assertEqual(b.id, 1)
