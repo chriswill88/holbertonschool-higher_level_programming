@@ -18,6 +18,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None:
@@ -46,7 +47,6 @@ class Base:
                 newdict[name] = x[i]
                 # print("dicty --", name, x[i])
             new_list.append(dict(newdict))
-            
         # print("the new dict -->", newdict)
         # print(new_list)
         with open(filename, 'w') as f:
