@@ -165,3 +165,4 @@ class Rectangle(Base):
         w = "width"
         i = 'id'
         return {'x': s.__x, 'y': s.__y, i: s.id, h: s.__height, w: s.__width}
+
