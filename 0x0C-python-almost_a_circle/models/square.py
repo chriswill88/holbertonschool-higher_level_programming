@@ -1,8 +1,6 @@
 #!/usr/bin/python3
+"""Square contains Square class """
 from models.rectangle import Rectangle
-"""
-models.square contains Square class
-"""
 
 
 class Square(Rectangle):

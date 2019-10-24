@@ -1,14 +1,12 @@
 #!/usr/bin/python3
+""" This modual contains Rectangle class. """
 from models.base import Base
-"""
-model.base contains Rectangle class
-"""
 
 
 class Rectangle(Base):
     """
-    Class Rectangle - creates rectangle object
-    inherits from the Base class
+    Class Rectangle - creates rectangle object.
+    inherits from the Base class.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
