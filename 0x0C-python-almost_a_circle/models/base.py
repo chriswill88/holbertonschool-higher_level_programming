@@ -1,13 +1,12 @@
 #!/usr/bin/python3
+"""A modual that contains the class.
+Our other created classes will be inheriting from.
+"""
 import json
-"""
-models/base is a modual that contains the Base class
-"""
 
 
 class Base:
-    """
-    Base class - creates base object
+    """ Creates base object.
     """
     __nb_objects = 0
 
