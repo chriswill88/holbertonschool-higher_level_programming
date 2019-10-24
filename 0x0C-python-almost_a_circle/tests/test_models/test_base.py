@@ -9,7 +9,10 @@ class TestBase(unittest.TestCase):
     """
     Class TestBase : testing class for base modual
     """
-    def test_base(self):
+    def test_bid(self):
+        """
+        test method for Base.id
+        """
         b = Base()
         self.assertEqual(b.id, 1)
         b = Base()

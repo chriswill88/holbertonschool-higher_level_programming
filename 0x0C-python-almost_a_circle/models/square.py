@@ -20,14 +20,16 @@ class Square(Rectangle):
         """
         s = Rectangle
         i = s.id
+        # print("i =", i)
         x = s.x
         y = s.y
         w = s.width
-        srt = '[{}] ({}) {}/{} - {}'.format(type(s). __name__, i, x, y, w)
+        srt = '[{}] ({}) {}/{} - {}'.format(type(s).__name__, i, x, y, w)
         return srt
 
     @property
     def size(self):
+        """ getter for size"""
         return self.width
 
     @size.setter
@@ -41,22 +43,31 @@ class Square(Rectangle):
         self.height = vari
 
     def update(self, *args, **kwargs):
+        """ update: updates attributes using args and kwargs"""
         i = 0
-        s = Rectangle
+        s = self
         if len(args) == 0 and not args:
+            i = 0
             for k, v in kwargs.items():
-                if k is "id":
+                # print("square: key->", k, "val->", v)
+                if k == "id":
                     s.id = v
-                if k == "size":
+                    # print("sq - kwargs - id = ", s.id)
+                if k == "size" or k == "width":
                     s.width = v
                 if k == "x":
                     s.x = v
                 if k == "y":
-                    s.y = v
+                    # print("y found")
+                    Rectangle.y = v
+                    # print("y =", Rectangle.y)
         else:
+            i = 0
             for a in args:
+                # print("val->", a)
                 if i == 0:
                     s.id = a
+                # print("sq - args - id = ", s.id)
                 if i == 1:
                     s.width = a
                 if i == 2:
@@ -64,7 +75,9 @@ class Square(Rectangle):
                 if i == 3:
                     s.y = a
                 i += 1
+        # print("------------------")
 
     def to_dictionary(self):
+        """ return a dictionary reperesentation of object """
         s = self
         return {'id': s.id, 'x': s.x, 'size': s.width, 'y': s.y}

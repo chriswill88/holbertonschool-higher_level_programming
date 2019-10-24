@@ -38,7 +38,7 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
-        self.__id = super().__init__(id)
+        super().__init__(id)
 
     @property
     def width(self):
@@ -135,8 +135,10 @@ class Rectangle(Base):
         i = 0
         if len(args) == 0 and not args:
             for k, v in kwargs.items():
-                if k is "id":
+                # print("Square: key->", k, "val->", v)
+                if k == "id":
                     self.id = v
+                    # print("self id = ", self.id)
                 if k == "width":
                     self.__width = v
                 if k == "height":
@@ -147,8 +149,10 @@ class Rectangle(Base):
                     self.__y = v
         else:
             for a in args:
+                # print("val->", a)
                 if i == 0:
                     self.id = a
+                    # print("id = ", a)
                 if i == 1:
                     self.__width = a
                 if i == 2:
@@ -158,11 +162,12 @@ class Rectangle(Base):
                 if i == 4:
                     self.__y = a
                 i += 1
+        # print("------------------")
 
     def to_dictionary(self):
+        """ return a dictionary reperesentation of object """
         s = self
         h = "height"
         w = "width"
         i = 'id'
         return {'x': s.__x, 'y': s.__y, i: s.id, h: s.__height, w: s.__width}
-
