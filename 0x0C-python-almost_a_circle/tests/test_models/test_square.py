@@ -1,13 +1,13 @@
 import unittest
-from models.base import Base
+from models.square import Square
 """
 This modual contains class TestBase:
 """
 
 
-class TestBase(unittest.TestCase):
+class TestSquare(unittest.TestCase):
     """
-    Class TestBase : testing class for base modual
+    Class TestSquare : testing class for Square modual
     """
     def test_bid(self):
         """

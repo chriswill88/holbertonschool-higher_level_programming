@@ -1,13 +1,13 @@
 import unittest
-from models.base import Base
+from models.rectangle import Rectangle
 """
-This modual contains class TestBase:
+This modual contains class TestRect:
 """
 
 
-class TestBase(unittest.TestCase):
+class TestRect(unittest.TestCase):
     """
-    Class TestBase : testing class for base modual
+    Class TestRect : testing class for Rectangle modual
     """
     def test_bid(self):
         """
