@@ -38,6 +38,7 @@ class Base:
         listy = []
         new_list = []
         newdict = {}
+        dicty = {}
         extra = len("_Rectangle__")
         filename = cls.__name__ + ".json"
         if list_objs is not None:
