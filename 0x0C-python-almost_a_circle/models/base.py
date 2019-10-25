@@ -51,7 +51,7 @@ class Base:
                 # print("1 list", x)
                 for i in x:
                     if cls.__name__ == "Square":
-                        print(i)
+                        # print(i)
                         if extra < len(i) and i[extra:] == "width":
                             name = "size"
                         elif extra < len(i) and i[extra:] == "height":
