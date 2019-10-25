@@ -3,7 +3,7 @@
 Our other created classes will be inheriting from.
 """
 import json
-
+import turtle
 
 class Base:
     """ Creates base object.
@@ -126,3 +126,39 @@ class Base:
             # print("x is", x)
             listOfInst.append(cls.create(**x))
         return listOfInst
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ draw squares with turtle """
+        t = turtle.Turtle()
+        t.color('red')
+        t.pensize(5)
+        t.shape('turtle')
+        t.speed(1)
+
+        for i in list_rectangles:
+            t.penup()
+            t.setx(i.x)
+            t.sety(i.y)
+            t.pendown()
+            t.forward(i.width)
+            t.left(90)
+            t.forward(i.height)
+            t.left(90)
+            t.forward(i.width)
+            t.left(90)
+            t.forward(i.height)
+        for u in list_squares:
+            t.color('blue')
+            t.penup()
+            t.setx(u.x)
+            t.sety(u.y)
+            t.pendown()
+            turtle.position()
+            t.forward(u.size)
+            t.left(90)
+            t.forward(u.size)
+            t.left(90)
+            t.forward(u.size)
+            t.left(90)
+            t.forward(u.size)
