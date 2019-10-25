@@ -5,7 +5,7 @@ Our other created classes will be inheriting from.
 import json
 import turtle
 import csv
-import ast
+from models.psudoclass import tricky
 
 
 class Base:
@@ -199,7 +199,7 @@ class Base:
                 reader = csv.reader(f)
                 for x in reader:
                     for i in x:
-                        listOfDicts.append(ast.literal_eval(i))
+                        listOfDicts.append(tricky.litty(i))
             for m in listOfDicts:
                 listOfInst.append(cls.create(**m))
 
