@@ -4,6 +4,7 @@ Our other created classes will be inheriting from.
 """
 import json
 import turtle
+import csv
 
 class Base:
     """ Creates base object.
@@ -117,7 +118,7 @@ class Base:
         filename = cls.__name__ + ".json"
         try:
             with open(filename) as f:
-                    # print("the listy", i)
+                # print("the listy", i)
                 l = Base.from_json_string(f.read())
         except FileNotFoundError:
             return listOfInst
@@ -125,6 +126,83 @@ class Base:
         for x in l:
             # print("x is", x)
             listOfInst.append(cls.create(**x))
+        return listOfInst
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        This method saves list objects in csv format
+        in a file.
+        """
+        name = ""
+        listy = []
+        new_list = []
+        newdict = {}
+        dicty = {}
+        extra = len("_Rectangle__")
+        filename = cls.__name__ + ".csv"
+        if list_objs is not None:
+            for objects in list_objs:
+                listy.append(objects.__dict__)
+                dicty = json.loads(json.dumps(listy))
+            for x in dicty:
+                for idx in range(5):
+                    for i in x:
+                        if cls.__name__ == "Square":
+                            if i == "id" and idx == 0:
+                                name = i
+                            elif i[extra:] == "x" and idx == 2:
+                                name = i[extra:]
+                            elif i[extra:] == "y" and idx == 3:
+                                name = i[extra:]
+                            elif i[extra:] == "width" and idx == 1:
+                                name = "size"
+                            else:
+                                continue
+                        else:
+                            # print("in if, idx =", idx)
+                            if i == "id" and idx == 0:
+                                name = i
+                            elif i[extra:] == "x" and idx == 3:
+                                name = i[extra:]
+                            elif i[extra:] == "y" and idx == 4:
+                                name = i[extra:]
+                            elif i[extra:] == "width" and idx == 1:
+                                name = i[extra:]
+                            elif i[extra:] == "height" and idx == 2:
+                                name = i[extra:]
+                            else:
+                                continue
+                        newdict[name] = x[i]
+                new_list.append(dict(newdict))
+        else:
+            new_list = []
+        # print(new_list)
+        with open(filename, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(new_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        loads list of str rep dicts
+        creates dicts, and finally reates and returns
+        a list of objects
+        """
+        listOfInst = []
+        listOfDicts = []
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, newline='') as f:
+                reader = csv.reader(f)
+                for x in reader:
+                    for i in x:
+                        listOfDicts.append(eval(i))
+            for m in listOfDicts:
+                listOfInst.append(cls.create(**m))
+
+        except FileNotFoundError:
+            return listOfInst
         return listOfInst
 
     @staticmethod
