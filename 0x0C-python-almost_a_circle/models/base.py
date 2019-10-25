@@ -6,6 +6,7 @@ import json
 import turtle
 import csv
 
+
 class Base:
     """ Creates base object.
     """
