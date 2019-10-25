@@ -35,6 +35,8 @@ class Base:
         Saves string representation of onjects and saves
         them in a file
         """
+        # print("listbjs = ", list_objs)
+        name = ""
         listy = []
         new_list = []
         newdict = {}
@@ -48,14 +50,26 @@ class Base:
             for x in dicty:
                 # print("1 list", x)
                 for i in x:
-                    # print(x)
-                    # if '_Rectangle__id' == i:
-                    #    continue
-                    if len(i) > extra:
-                        name = i[extra:]
+                    if cls.__name__ == "Square":
+                        print(i)
+                        if extra < len(i) and i[extra:] == "width":
+                            name = "size"
+                        elif extra < len(i) and i[extra:] == "height":
+                            continue
+                        elif len(i) > extra:
+                            name = i[extra]
+                        else:
+                            name = i
                     else:
-                        name = i
+                        # print(x)
+                        # if '_Rectangle__id' == i:
+                        #    continue
+                        if len(i) > extra:
+                            name = i[extra:]
+                        else:
+                            name = i
                     newdict[name] = x[i]
+                # print("newdict->", newdict)
                 # print("dicty --", name, x[i])
                 new_list.append(dict(newdict))
         # print("the new dict -->", newdict)
