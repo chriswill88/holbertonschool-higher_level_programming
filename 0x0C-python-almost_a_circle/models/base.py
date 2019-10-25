@@ -5,6 +5,7 @@ Our other created classes will be inheriting from.
 import json
 import turtle
 import csv
+import ast
 
 
 class Base:
@@ -198,7 +199,7 @@ class Base:
                 reader = csv.reader(f)
                 for x in reader:
                     for i in x:
-                        listOfDicts.append(eval(i))
+                        listOfDicts.append(ast.literal_eval(i))
             for m in listOfDicts:
                 listOfInst.append(cls.create(**m))
 
