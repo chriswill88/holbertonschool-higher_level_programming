@@ -8,7 +8,6 @@ if __name__ == '__main__':
     usr = sys.argv[1]
     psw = sys.argv[2]
     db = sys.argv[3]
-    name = sys.argv[4]
 
     # Setting Up Connection - localhost and 3306 are default
     conn = MySQLdb.connect(
@@ -21,7 +20,8 @@ if __name__ == '__main__':
     # finding the information
     db = conn.cursor()
     db.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(name))
+        "SELECT * FROM states WHERE name='{}' ORDER BY id ASC"
+        .format(sys.argv[4]))
 
     # Grabbing the data
     query = db.fetchall()
