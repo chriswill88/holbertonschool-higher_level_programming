@@ -10,6 +10,12 @@ if __name__ == '__main__':
     db = sys.argv[3]
     name = sys.argv[4]
 
+    # Injection Prevention
+    if "\"" in name:
+        name = name.split("\"")[0]
+    if "\'" in name:
+        name = name.split("\'")[0]
+
     # Setting Up Connection - localhost and 3306 are default
     conn = MySQLdb.connect(
         host="localhost",
