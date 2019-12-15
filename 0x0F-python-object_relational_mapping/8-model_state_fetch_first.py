@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     # Access Database and print
 
-    state = session.query(State.id, State.name).order_by(State.id).first()
+    state = session.query(State.id, State.name).first()
     if state is None:
         print("Nothing")
     else:
