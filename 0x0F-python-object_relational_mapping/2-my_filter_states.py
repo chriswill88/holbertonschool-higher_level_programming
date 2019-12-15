@@ -28,7 +28,8 @@ if __name__ == '__main__':
 
     # printing info
     for row in query:
-        print(row)
+        if row[1] == name:
+            print(row)
 
     # closing connection
     db.close()
