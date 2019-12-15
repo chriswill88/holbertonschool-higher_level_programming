@@ -19,14 +19,15 @@ if __name__ == '__main__':
 
     # finding the information
     db = conn.cursor()
-    db.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    db.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Grabbing the data
     query = db.fetchall()
 
     # printing info
     for row in query:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     # closing connection
     db.close()
