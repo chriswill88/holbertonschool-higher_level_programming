@@ -21,7 +21,7 @@ if __name__ == '__main__':
     # finding the information
     db = conn.cursor()
     db.execute(
-        "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(name))
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(name))
 
     # Grabbing the data
     query = db.fetchall()
