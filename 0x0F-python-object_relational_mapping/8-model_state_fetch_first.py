@@ -24,10 +24,9 @@ if __name__ == '__main__':
 
     # Access Database and print
     try:
-        state = session.query(State.id, State.name).filter(State.id == 1).one()
+        state = session.query(State.id, State.name).filter(State.id == 8).one()
+        print(state)
     except Exception:
         print("Nothing")
-    print(state)
-
     # Close Session
     session.close()
