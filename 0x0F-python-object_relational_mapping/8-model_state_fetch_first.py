@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 import sys
-from model_state import Base, State
 from sqlalchemy import create_engine
+from sqlalchemy import select
 from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+from sqlalchemy.orm.exc import NoResultFound
+from sqlalchemy.orm.exc import MultipleResultsFound
+
 
 if __name__ == '__main__':
     # setting up connection
@@ -19,11 +23,11 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     # Access Database and print
-    state = session.query(State).order_by(State.id).all()
-    if len(state) > 0:
-        state = state[0]
-        print("{}: {}".format(state.id, state.name))
-    else:
+    try:
+        state = session.query(State.id, State.name).filter(State.id == 1).one()
+    except Exception:
         print("Nothing")
+    print(state)
+
     # Close Session
     session.close()
