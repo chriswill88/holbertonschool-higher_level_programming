@@ -28,7 +28,7 @@ if __name__ == '__main__':
     db = conn.cursor()
     db.execute("SELECT cities.name FROM cities,\
     states WHERE states.id = cities.state_id AND\
-    states.name = 'Texas' ORDER BY cities.id ASC;".format(state))
+    states.name = '{}' ORDER BY cities.id ASC;".format(state))
 
     # Grabbing the data
     query = db.fetchall()
