@@ -34,15 +34,7 @@ if __name__ == '__main__':
     query = db.fetchall()
 
     # printing info
-    listOfStates = []
-    for row in query:
-        listOfStates += row
-
-    for i in range(len(listOfStates)):
-        if i < len(listOfStates) - 1:
-            print(listOfStates[i], end=", ")
-        else:
-            print(listOfStates[i])
+    print(", ".join(row[0] for row in query))
 
     # closing connection
     db.close()
