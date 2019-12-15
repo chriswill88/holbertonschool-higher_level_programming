@@ -8,6 +8,13 @@ if __name__ == '__main__':
     usr = sys.argv[1]
     psw = sys.argv[2]
     db = sys.argv[3]
+    # name = sys.argv[4]
+
+    # Injection Prevention
+    # if "\"" in name:
+    #     name = name.split("\"")[0]
+    # if "\'" in name:
+    #     name = name.split("\'")[0]
 
     # Setting Up Connection - localhost and 3306 are default
     conn = MySQLdb.connect(
@@ -19,7 +26,7 @@ if __name__ == '__main__':
 
     # finding the information
     db = conn.cursor()
-    db.execute("SELECT * FROM cities ORDER BY id ASC")
+    db.execute("SELECT cities.id, cities.name, states.name FROM cities, states WHERE cities.state_id = states.id ORDER BY id ASC")
 
     # Grabbing the data
     query = db.fetchall()
