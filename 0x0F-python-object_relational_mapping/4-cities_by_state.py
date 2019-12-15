@@ -26,7 +26,8 @@ if __name__ == '__main__':
 
     # finding the information
     db = conn.cursor()
-    db.execute("SELECT cities.id, cities.name, states.name FROM cities, states WHERE cities.state_id = states.id ORDER BY id ASC")
+    db.execute("SELECT cities.id, cities.name, states.name FROM cities, states\
+        WHERE cities.state_id = states.id ORDER BY id ASC")
 
     # Grabbing the data
     query = db.fetchall()
