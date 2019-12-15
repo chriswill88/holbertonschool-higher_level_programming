@@ -22,7 +22,8 @@ if __name__ == '__main__':
     state = session.query(State).order_by(State.id).all()
     if len(state) > 0:
         state = state[0]
-        print("{}: {}".format(state.id, state.name), end="")
-    print()
+        print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
     # Close Session
     session.close()
