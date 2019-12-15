@@ -23,10 +23,12 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     # Access Database and print
-    try:
-        state = session.query(State.id, State.name).first()
-        print(state)
-    except Exception:
+
+    state = session.query(State.id, State.name).order_by(State.id).first()
+    if state is None:
         print("Nothing")
+    else:
+        print(state)
+
     # Close Session
     session.close()
