@@ -24,10 +24,8 @@ if __name__ == '__main__':
 
     # Access Database and print
     try:
-        state = session.query(State.id, State.name).filter(State.id == 1).one()
+        state = session.query(State.id, State.name).first()
         print(state)
-    except MultipleResultsFound:
-        pass
     except Exception:
         print("Nothing")
     # Close Session
