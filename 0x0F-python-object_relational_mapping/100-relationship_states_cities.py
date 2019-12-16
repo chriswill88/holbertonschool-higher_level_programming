@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     # Add state and print
     state = State(name='Califorina')
-    state.cities = [City(name='San Fransisco')]
+    state.cities = [City(name='San Francisco')]
     session.add(state)
     session.commit()
 
