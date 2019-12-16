@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 import sys
-from sqlalchemy import create_engine
-from sqlalchemy import select
-from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy.orm.exc import MultipleResultsFound
-
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == '__main__':
     # setting up connection
@@ -22,13 +18,13 @@ if __name__ == '__main__':
     # Access Metadata - issues create statements for tables
     Base.metadata.create_all(engine)
 
-    # Access Database and print
+    # Access Database and deleting states with a
+    for state in session.query(State).order_by(State.id).all():
+        if 'a' in state.name:
+            session.delete(state)
 
-    state = session.query(State.id, State.name).order_by(State.id).first()
-    if state is None:
-        print("Nothing")
-    else:
-        print("{}: {}".format(state.id, state.name))
+    # Commiting changes
+    session.commit()
 
     # Close Session
     session.close()

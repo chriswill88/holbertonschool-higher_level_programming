@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 
-"""In this Modual the table: states is being exepressed as an object"""
+"""In this Modual the table: city is being exepressed as an object"""
 # Declearation base
 Base = declarative_base()
 
 
-class State(Base):
+class City(Base):
     """
-    class for states table
+    class for city table
     used for creating the table itself
     """
-    __tablename__ = 'states'
+    __tablename__ = 'cities'
     id = Column(
         Integer,
         autoincrement=True,
@@ -20,3 +20,4 @@ class State(Base):
         primary_key=True,
         nullable=False)
     name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
