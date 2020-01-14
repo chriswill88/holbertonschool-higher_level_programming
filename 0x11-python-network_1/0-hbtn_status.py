@@ -19,5 +19,3 @@ if __name__ == "__main__":
         for line in html:
             rline = line.decode('utf-8')
         print("\t- utf8 content: {}".format(rline))
-
-
