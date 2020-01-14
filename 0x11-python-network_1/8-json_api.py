@@ -8,7 +8,8 @@ if __name__ == "__main__":
         q = {'q': sys.argv[1]}
     except Exception:
         q = ""
-    r = requests.post('http://7737658283c4.19.hbtn-cod.io:5000/search_user', q)
+    r = requests.post(
+        'http://7737658283c4.19.hbtn-cod.io:5000/search_user', data=q)
     try:
         print("[{}] {}".format(r.json()['id'], r.json()['name']))
     except Exception:
