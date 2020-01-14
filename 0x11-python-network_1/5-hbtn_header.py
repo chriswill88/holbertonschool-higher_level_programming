@@ -4,5 +4,5 @@ import sys
 
 """Fetches a url and displays the variable X-Request"""
 if __name__ == "__main__":
-    r = requests.post(sys.argv[1])
+    r = requests.get(sys.argv[1])
     print("{}".format(r.headers['X-Request-Id']))
