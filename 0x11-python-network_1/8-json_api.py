@@ -10,12 +10,13 @@ if __name__ == "__main__":
         q = ""
 
     r = requests.post(
-        'http://473998d62070.19.hbtn-cod.io:5000/search_user', data={'q': q}
+        'http://0.0.0.0:5000/search_user', data={'q': q}
         )
     try:
-        if r.json() == {}:
+        info = r.json()
+        if info == {}:
             print("No result")
         else:
-            print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
+            print("[{}] {}".format(info.get('id'), info.get('name')))
     except Exception:
         print("Not a valid JSON")
