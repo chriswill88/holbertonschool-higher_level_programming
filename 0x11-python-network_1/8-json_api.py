@@ -12,9 +12,9 @@ if __name__ == "__main__":
         'http://0.0.0.0:5000/search_user', data={'q': q}
         )
     try:
-        print("[{}] {}".format(r.json['id'], r.json['name']))
-    except Exception:
         if r.json() == {}:
             print("No result")
         else:
-            print("Not a valid JSON")
+            print("[{}] {}".format(r.json['id'], r.json['name']))
+    except Exception:
+        print("Not a valid JSON")
