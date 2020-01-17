@@ -5,7 +5,7 @@ import sys
 """Starwars search"""
 if __name__ == "__main__":
     search = {'search': sys.argv[1]}
-    r = requests.get('https://swapi.co/api/people', search)
+    r = requests.get('https://swapi.co/api/people', params=search)
     page = r.json()
     stringies, count = page['results'], page['count']
     # print(type(r.json()))
