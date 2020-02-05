@@ -7,5 +7,7 @@ if (arry[2]) {
 }
 if (isNaN(num)) {
   num = 'Not a number';
+} else {
+  num = 'My number: ' + num;
 }
 console.log(num);
