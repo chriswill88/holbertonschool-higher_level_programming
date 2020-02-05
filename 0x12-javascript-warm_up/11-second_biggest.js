@@ -15,9 +15,9 @@ if (len < 2) {
       num = parseInt(x);
     }
   }
-
   for (i of arry) {
-    if (i < num) {
+    if (i > n && i !== num) {
+      // console.log("a --> " + i)
       n = parseInt(i);
     }
   }
