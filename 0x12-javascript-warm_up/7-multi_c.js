@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const arry = process.argv;
-const string = "C is fun";
-let num = parseInt(arry[2]);
+const string = 'C is fun';
+const num = parseInt(arry[2]);
 let i = 0;
 
 if (isNaN(num)) {
