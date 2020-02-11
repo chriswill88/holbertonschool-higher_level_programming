@@ -1,5 +1,5 @@
 #!/usr/bin/node
-var functioncalls = 0;
+let functioncalls = 0;
 
 exports.logMe = function (item) {
   console.log(`${functioncalls}: ${item}`);
